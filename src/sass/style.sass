@@ -277,8 +277,25 @@ nav
 			left: 50%
 			transform: translateX(-50%)
 			cursor: pointer
-
-
+			transition: 0.3s all
+			&:before
+				content: ''
+				display: block
+				width: 14px
+				height: 2px
+				background-color: $blue-color
+			&:after
+				position: absolute
+				left: 50%
+				transform: translateX(-50%)
+				content: ''
+				display: block
+				width: 2px
+				height: 14px
+				background-color: $blue-color
+			&:hover
+				&:after, &::before
+					background-color: $red-color
 
 .choice
 	position: relative
@@ -297,8 +314,50 @@ nav
 		color: $dark-color
 
 .conditions
-	padding: 68px 0 87px
-	min-height: 764px
+	padding: 68px 0 85px
+	/* min-height: 764px  there is only the text, so not nessesary\ — it will be resized by the amount of the content */
+	&_block
+		margin: 32px 0
+		&_no-margin-bottom
+			margin-bottom: 0
+	&_title
+		font-weight: 400
+		font-size: 22px
+	&_desc
+		font-weight: 300
+		font-size: 17px
+		line-height: 24px
+	&_title, &_desc
+		color: #1CA8C3
+	&_list
+		margin-top: 18px
+		list-style-type: none
+		padding-left: 50px
+		li
+			font-weight: 300
+			font-size: 17px
+			line-height: 24px
+			margin-bottom: 10px
+			position: relative
+			&::before
+				content: ''
+				display: inline-block
+				position: absolute
+				left: -32px
+				top: 3px
+				width: 21px
+				height: 20px
+				background: url(../icons/check_blue.png) center (center / cover) no-repeat
+	
+	.warning
+		.conditions_title
+			color: $red-color
+		.conditions_list
+				li
+					&::before
+						background: url(../icons/check_red.png) center (center / cover) no-repeat
+
+
 
 		
 	
