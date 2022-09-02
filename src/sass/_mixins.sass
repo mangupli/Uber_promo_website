@@ -1,0 +1,12 @@
+@mixin blue-btn
+	background: linear-gradient(0deg, $blue-color 0%, #4CE2FF 100%)
+	box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.12)
+	border-radius: 4px
+	transition: 0.5s all
+
+@mixin blue-btn-hover
+	background: linear-gradient(0deg, #4CE2FF 0%, #0fc2e5 100%)
+
+@mixin blue-btn-active
+	/* background: linear-gradient(0deg, #4CE2FF 0%, #0fc2e5 100%) */
+	background: $blue-color
