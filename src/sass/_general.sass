@@ -1,17 +1,16 @@
-.container
-	max-width: 1140px
-	padding: 0
-
 header
 	position: relative
+	height: 50px
 
 nav
 	height: 50px
 	background-color: #212121
 	position: fixed
-	top: 0
 	width: 100%
 	z-index: 5
+
+.hamburger
+	display: none
 
 .menu
 	display: flex
@@ -20,15 +19,17 @@ nav
 	margin: 0
 	list-style-type: none
 
-	.menu_item
+	&_item
 		border-right: 2px dotted black
-		padding-right: 28px
+		padding-right: 32px
+		&:last-child
+			border-right: none
 
-		.menu_link
-			font-weight: 300
-			font-size: 15px
-			color: $white-color
-			text-decoration: none
+	&_link
+		font-weight: 300
+		font-size: 15px
+		color: $white-color
+		text-decoration: none
 
 .subheader
 	position: absolute
@@ -57,11 +58,14 @@ nav
 		text-align: right
 		color: $white-color
 		font-weight: 300
+	
+	.xs-visible
+		display: none
 
-		.subheader_phone
-			font-size: 22px
-			text-decoration: none
-			color: $white-color
+	&_phone
+		font-size: 22px
+		text-decoration: none
+		color: $white-color
 
 	&_btn
 		@include blue-btn
@@ -77,9 +81,9 @@ nav
 		&:active
 			@include blue-btn-active
 			
-
-
 .label
+	position: relative
+	z-index: 2
 	margin: 0 auto
 	padding: 5px 12px
 	font-style: normal
@@ -115,10 +119,14 @@ nav
 	font-size: 38px
 	font-weight: 700
 	color: $dark-color
+	position: relative
+	z-index: 2
 	&_white
 		color: $white-color
 
 .subtitle
+	position: relative
+	z-index: 2
 	font-weight: 400
 	font-size: 17px
 	text-align: center
@@ -131,32 +139,33 @@ nav
 	min-height: 800px
 	background: url("../img/bg/uber_bg.jpg") center (center / cover) no-repeat
 	padding: 190px 0 135px 0px
-	text-align: center
 
-	&_header, .promo_invite
+	&_header
 		text-transform: uppercase
 		margin: 0
 		color: $white-color
 		font-weight: 700
-
-	&_header
-		text-transform: uppercase
 		text-align: center
 		font-size: 60px
 		line-height: 60px
 
 	&_invite
+		text-align: center
+		text-transform: uppercase
+		margin: 0
+		color: $white-color
+		font-weight: 700
 		font-size: 36px
 		line-height: 36px
 		margin-top: 18px
 
 	&_text
 		margin-top: 25px
-		width: 980px
 		font-size: 18px
 		line-height: 24px
 		color: $white-color
 		font-weight: 400
+		text-align: center
 
 	&_btn
 		@include blue-btn
@@ -177,24 +186,28 @@ nav
 .reasons
 	padding: 18px 0 64px 0
 
-	.reason_subheader
-		font-size: 17px
-		line-height: 21px
-		color: $blue-color
-		font-weight: 400
-
 	.reasons_item
 		margin-top: 30px
 		display: flex
 		justify-content: space-around
 		align-items: center
 
+
+	.reasons_subheader
+		font-size: 17px
+		line-height: 21px
+		color: $blue-color
+		font-weight: 400
+
 	.reasons_text
-		display: inline-block
 		width: 343px
+	
+	.reasons_descr
 		font-size: 15px
 		font-weight: 300
 		color: #202020
+		line-height: 21px
+		margin-top: 5px
 
 	.reasons_item .icon
 		display: flex
@@ -279,18 +292,34 @@ nav
 .choice
 	position: relative
 	min-height: 908px
-	background: url("../img/bg/automobile_bg.jpg") bottom center no-repeat #070716
+	background: url("../img/bg/automobile_bg.jpg") center center/cover no-repeat 
 	padding: 57px 0 137px
 	
+
+	.black_bg
+		top: 0
+		left: 0
+		position: absolute
+		height: 499px
+		width: 100%
+		background-color:  #070716
+		z-index: 1
+	
 	&_img
+		position: relative
 		display: block
 		margin: 54px auto 0
+		z-index: 2
+		
 	&_descr
+		position: relative
 		font-weight: 300
 		font-size: 17px
 		line-height: 24px
 		text-align: center
 		color: $dark-color
+		z-index: 2
+		
 
 .conditions
 	padding: 68px 0 85px
@@ -350,7 +379,6 @@ nav
 		bottom: 45px
 		font-weight: 400
 		font-size: 15px
-		line-height: 68px
 		text-transform: uppercase
 		color: #1FBAD6
 		text-decoration: none
