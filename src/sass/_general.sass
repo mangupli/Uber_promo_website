@@ -9,6 +9,13 @@ nav
 	width: 100%
 	z-index: 5
 
+.blue-button
+	border: none
+	background: linear-gradient(0deg, $blue-color 0%, #4CE2FF 100%)
+	box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.12)
+	border-radius: 4px
+	transition: 0.5s all
+
 .hamburger
 	display: none
 
@@ -21,7 +28,7 @@ nav
 
 	&_item
 		border-right: 2px dotted black
-		padding-right: 32px
+		padding-right: 37px
 		&:last-child
 			border-right: none
 
@@ -68,7 +75,6 @@ nav
 		color: $white-color
 
 	&_btn
-		@include blue-btn
 		color: $white-color
 		font-weight: 400
 		margin-top: 19px
@@ -109,8 +115,6 @@ nav
 		&:after
 			width: 100%
 			
-	
-
 
 .title
 	margin: 30px 0 0
@@ -168,7 +172,6 @@ nav
 		text-align: center
 
 	&_btn
-		@include blue-btn
 		color: $white-color
 		font-weight: 400
 		display: block
@@ -180,43 +183,40 @@ nav
 		&:hover
 			@include blue-btn-hover
 		
-			
-
 
 .reasons
-	padding: 18px 0 64px 0
+	padding: 18px 0 64px
 
-	.reasons_item
+	&_item
 		margin-top: 30px
 		display: flex
 		justify-content: space-around
 		align-items: center
+		.icon
+			display: flex
+			justify-content: center
+			align-items: center
+			width: 116px
+			height: 116px
+			background: $blue-color
+			border-radius: 100%
 
-
-	.reasons_subheader
+	&_subheader
 		font-size: 17px
 		line-height: 21px
 		color: $blue-color
 		font-weight: 400
 
-	.reasons_text
+	&_text
 		width: 343px
 	
-	.reasons_descr
+	&_descr
 		font-size: 15px
 		font-weight: 300
 		color: #202020
 		line-height: 21px
 		margin-top: 5px
-
-	.reasons_item .icon
-		display: flex
-		justify-content: center
-		align-items: center
-		width: 116px
-		height: 116px
-		background: $blue-color
-		border-radius: 100%
+		
 
 .mobile
 	min-height: 864px
@@ -227,11 +227,10 @@ nav
 		margin-top: 10px
 
 	&_item
-		/* display: flex */
 		width: 320px
 		height: 280px
 		margin: 19px auto 0
-		padding-top: 92px
+		padding: 92px 10px 0
 		position: relative
 
 		&_1
